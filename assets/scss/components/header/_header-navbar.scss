@@ -1,26 +1,30 @@
-.header-navbar {
+@use "../../presets/" as *;
+@use "../../mixins/" as *;
 
+.header-navbar {
   &__list {
     display: grid;
-    gap: $gap;
-    grid-template-columns: repeat(auto-fit, minmax(10px, max-content));
     justify-content: end;
 
-    @include unlist()
+    gap: $gap;
+    grid-template-columns: repeat(auto-fit, minmax(10px, max-content));
+    @include unlist(0 (-$gap-sm) 0 0);
   }
 
-  &__item {}
+
 
   &__link {
     display: block;
+
     padding: $gap $gap-sm;
-    font-size: 1.125rem;
+
     letter-spacing: 0.1em;
+
+    font-size: 1.125rem;
 
     &:hover,
     &:focus {
       color: $color-accent;
     }
   }
-
 }

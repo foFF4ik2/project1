@@ -1,3 +1,5 @@
+@use "../presets/" as *;
+
 // Absolute positioning
 
 @mixin abs-position($top: 0, $right: 0, $bottom: 0, $left: 0) {
@@ -13,6 +15,7 @@
 @mixin unlist($m: 0, $p: 0) {
   margin: $m;
   padding: $p;
+
   list-style: none;
 }
 
@@ -20,14 +23,18 @@
 
 @mixin visually-hidden {
   position: absolute;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
   width: 1px;
   height: 1px;
   margin: -1px;
-  border: 0;
   padding: 0;
 
   white-space: nowrap;
+
+  border: 0;
+
   clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
